@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Learning Platform</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body::-webkit-scrollbar{
+        display: none;
+    }
+    .container-fluid {
+        margin: 0 0 0 300px;
+        border-left: 1px solid black;
+    }
+
+    #sidebar .nav-item {
+        margin-bottom: -5px;
+    }
+
+    #sidebar .nav-link {
+        padding-left: 0;
+    }
+
+    .nav-bar {
+        position: fixed;
+        margin-top: 80px;
+        width: 300px;
+        height: calc(100vh - 80px);
+        overflow-y: scroll;
+        top: 0;
+        left: 0;
+        bottom: 0;
+    }
+    .nav-bar::-webkit-scrollbar {
+        display: none;
+    }
+
+    .nav-bar {
+        scrollbar-width: none;
+    }
+
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+        .container-fluid {
+            margin: 0;
+        }
+        .nav-bar {
+            background-color: rgb(27, 27, 27);
+            color: white;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        .nav-bar.active {
+            transform: translateX(0);
+        }
+    }
+
+    /*Dark mode*/
+    .modes{
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+    body{
+        background-color: white;
+    }
+    body.dark {
+        background-color: #292c35;
+        color: white;
+    }
+    footer .dark, nav .dark{
+        background-color: #292c35;
+    }
+
+    body.dark h1, body.dark .support a {
+        color: #fff;
+    }
+
+    .checkbox {
+        opacity: 0;
+        position: absolute;
+    }
+
+    .checkbox-label {
+        background-color: #111;
+        width: 50px;
+        height: 26px;
+        border-radius: 50px;
+        position: relative;
+        padding: 5px;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .fa-moon {color: #f1c40f;}
+
+    .fa-sun {color: #f39c12;}
+
+    .checkbox-label .ball {
+        background-color: #fff;
+        width: 22px;
+        height: 22px;
+        position: absolute;
+        left: 2px;
+        top: 2px;
+        border-radius: 50%;
+        transition: transform 0.2s linear;
+    }
+
+    .checkbox:checked + .checkbox-label .ball {
+        transform: translateX(24px);
+    }
+  </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="bg-primary text-white py-3 sticky-top">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center">
+                <img src="https://via.placeholder.com/50" alt="Logo" class="me-2" id="logo" style="border-radius: 50%;">
+                <h1 class="h4 mb-0">Learning Platform</h1>
+            </div>
+            <button id="sidebarToggle" class="btn btn-primary d-md-none">☰</button>
+            <p class="mb-0 d-none d-md-block">Your Gateway to Knowledge</p>
+        </div>
+    </header>
+
+    <div class="d-flex">
+        <!-- Sidebar -->
+        <nav class="flex-shrink-0 p-3 d-md-block nav-bar" style="width: 300px;" id="sidebar">
+            <div class="modes">
+                <p>Light</p>
+                <div>
+                    <input type="checkbox" class="checkbox" id="checkbox">
+                    <label for="checkbox" class="checkbox-label">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                    <span class="ball"></span>
+                    </label>
+                </div>
+                <p>dark</p>
+              </div>
+        
+              <script>
+                const checkbox = document.getElementById("checkbox")
+                checkbox.addEventListener("change", () => {
+                    document.body.classList.toggle("dark")
+                })
+              </script>
+              <hr>
+            <h4 class="text-center mb-4">Table of Contents</h4>
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link fw-bold" href="#introduction">Introduction</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fw-bold" href="#whatisresearch">Chapter 1: What is Research</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fw-bold" href="#whayisresearchdone">Chapter 2: Why Research is Done?</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fw-bold" href="#chapter4" data-bs-toggle="collapse" aria-expanded="false">
+                        Chapter 3: Research Ethics <span class="caret"></span>
+                    </a>
+                    <ul class="collapse list-unstyled ms-3" id="chapter4">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#objectsinreserch">3.1: Objects in Research Ethics</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#principle" data-bs-toggle="collapse" aria-expanded="false">
+                                3.2: Principles of Research Ethics <span class="caret"></span>
+                            </a>
+                            <ul class="collapse list-unstyled ms-3" id="principle">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#honesty">3.2.1: Honesty</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#integrity">3.2.2: Integrity</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#objectivity">3.2.3: Objectivity</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">3.2.4: Inform consent</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">3.2.5: Respect for person/respondent</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">3.2.6: Brnificence</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">3.2.7: Non-maleficence /Protecting the subjects (Human)</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">3.2.8: Responsible publication</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">3.2.9: Protecting anonymity</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">3.2.10: Confidentiality</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">3.2.11: Non-discrimination</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">3.2.12: Opennes</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">3.2.13: Carefulness and respect for intellectual property</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">3.2.14: Justice</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <hr class="mt-1 mb-1"/>
+        </nav>
+        <!-- Main Content -->
+        <div class="container-fluid">
+            <div class="row">
+                <main class="col-md-9 col-lg-10 mx-auto px-md-4">
+                    <div class="content row my-4">
+                        <!-- Text Section -->
+                        <div class="col-md-8">
+                            <section id="introduction">
+                                <img src="resources/image/research.jpg" class="img-fluid mb-3" alt="Research">
+                                <h1 class="border-bottom pb-2">Introduction</h1>
+                                <p>
+                                    Research is the cornerstone of knowledge and innovation, shaping the way we understand the world around us. On this platform, you'll embark on an exciting journey into the realm of research—its purpose, methods, and impact. Whether you're exploring how to ask the right questions, gathering and analyzing data, or drawing meaningful conclusions, our resources and tools will guide you every step of the way.
+                                </p>
+                                <p>
+                                    Get ready to enhance your critical thinking skills, develop a systematic approach to problem-solving, and contribute to meaningful discoveries. Let’s dive in and uncover the power of research together!
+                                </p>
+                                <p>
+                                    This page has been specially developed for third-year students of Section C to guide and support your journey through the fascinating world of qualitative research. Here, you'll delve into methods and techniques that explore human experiences, behaviors, and social phenomena in rich detail.
+                                </p>
+                                <p>
+                                    Throughout this course, you'll gain insights into crafting compelling research questions, conducting interviews and observations, analyzing narratives, and interpreting findings. This knowledge will help you understand the depth and complexity of qualitative data while honing your critical thinking and analytical skills.
+                                </p>
+                                <p>
+                                    Let’s make this learning experience meaningful and impactful. Happy researching!
+                                </p>
+                            </section>
+                            
+                            <!--what is research?-->
+                            <section id="whatisresearch">
+                                <h1>What is Research?</h1>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum saepe assumenda fugiat aut nulla libero! Quibusdam quod, ut, dicta accusamus ad odio asperiores voluptate fugit quisquam minima amet unde illum?
+                                </p>
+                            </section>
+
+                            <!--whay is research done?-->
+                            <section id="whayisresearchdone">
+                                <h1>Whay is Research done?</h1>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum saepe assumenda fugiat aut nulla libero! Quibusdam quod, ut, dicta accusamus ad odio asperiores voluptate fugit quisquam minima amet unde illum?
+                                </p>
+                            </section>
+
+                            <!--RFesearch ethics-->
+                            <section id="reserachethics">
+                                <h1>Research Ethics</h1>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum saepe assumenda fugiat aut nulla libero! Quibusdam quod, ut, dicta accusamus ad odio asperiores voluptate fugit quisquam minima amet unde illum?
+                                </p>
+                            </section>
+
+                            <!--Objects in research-->
+                            <section id="objectsinreserch">
+                                <h1>Objects in Research</h1>
+                                <p>
+                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde eligendi voluptate similique. Libero consectetur repellat cum rem dolorum temporibus blanditiis nisi tempore tenetur, assumenda quisquam at nemo. Totam, vitae eos.
+                                </p>
+                            </section>
+
+                            <!--Principles of researc-->
+                            <section id="principlesofresearch">
+                                <h1>Priciples of Research</h1>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, recusandae temporibus mollitia optio neque laboriosam? Ex harum qui officia quisquam aliquid libero recusandae voluptatum accusamus similique eos rem, quasi expedita.
+                                </p>
+                                <!--Honesty-->
+                                <div id="honesty">
+                                    <h2>Honesty</h2>
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni cumque illum tenetur delectus necessitatibus aperiam incidunt exercitationem quos, enim blanditiis pariatur velit. Sequi eaque blanditiis atque, sapiente adipisci tempore hic.
+                                    </p>
+                                </div>
+                                <!--Integrity-->
+                                <div id="integrity">
+                                    <h2>Integrity</h2>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut dolor possimus ab quas repellendus. Consectetur autem labore voluptatibus doloribus quo perferendis et sunt? Voluptatibus nesciunt porro praesentium veritatis velit excepturi!
+                                    </p>
+                                </div>
+
+                                <!--Objectivity-->
+                                <div id="objectivity">
+                                    <h2>Objectivity</h2>
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium officiis consequatur harum maiores nesciunt ducimus aut totam sit optio deserunt earum ullam quis necessitatibus, a ipsam provident. Quo, quibusdam deleniti?
+                                    </p>
+                                </div>
+                            </section>
+                            
+                        </div>
+                        <!-- Image Section -->
+                        <div class="col-md-4">
+                            <div class="rounded">
+                                <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel">
+                                    <!-- Carousel items -->
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active">
+                                            <img src="resources/image/sample1.jpg" class="d-block w-100 img-fluid" alt="Sample Image 1">
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos quis velit dolores quasi aperiam delectus quas suscipit magni alias a, itaque nesciunt obcaecati doloribus, quos cum veniam officiis possimus voluptates.</p>
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="resources/image/sample2.png" class="d-block w-100 img-fluid" alt="Sample Image 2">
+                                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa unde nam placeat tenetur esse! Sit nobis voluptates incidunt quam veniam accusantium blanditiis officia, itaque rerum, quaerat sequi alias in soluta?</p>
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="resources/image/sample3.jpg" class="d-block w-100 img-fluid" alt="Sample Image 3">
+                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis maxime minus numquam magnam ipsum nesciunt voluptatem blanditiis repellat ducimus at impedit odit voluptatibus perspiciatis error accusamus, veritatis molestiae ullam. Corrupti!</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class=" text-center py-3 mt-4">
+        <p class="mb-0">&copy; 2024 QUALITATIVE METHOD Learning Platform | Designed by mr.K</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Toggling sidebar visibility
+        document.getElementById('sidebarToggle').addEventListener('click', () => {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('active'); // Toggles the 'active' class to show/hide
+        });
+
+    </script>
+</body>
+</html>
