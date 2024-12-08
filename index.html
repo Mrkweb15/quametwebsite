@@ -3,19 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quamet Learning Platform</title>
+  <title>Responsive Learning Platform</title>
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <style>
+    .orange{
+        color: rgb(243, 146, 1);
+    }
     body::-webkit-scrollbar{
         display: none;
     }
+
     .container-fluid {
+        min-height: calc(100vh - 80px);
+        top: 200px;
         margin: 0 0 0 300px;
         border-left: 1px solid black;
     }
 
+    .image-section{
+        position: fixed;
+        right: 0;
+        top: 107px;
+        width: 30vw;
+    }
+
+    p{
+        text-align: justify;
+        text-indent: 50px;
+    }
     #sidebar .nav-item {
         margin-bottom: -5px;
     }
@@ -44,18 +61,31 @@
 
     /* Mobile responsiveness */
     @media (max-width: 768px) {
+        h1, h2, h3, h4, h5, h6{
+            font-size: medium;
+        }
+        p, ul li{
+            font-size: smaller;
+        }
         .container-fluid {
             margin: 0;
+            border: none;
         }
         .nav-bar {
             background-color: rgb(27, 27, 27);
             color: white;
             transform: translateX(-100%);
             transition: transform 0.3s ease-in-out;
-z-index: 100;
         }
         .nav-bar.active {
             transform: translateX(0);
+        }
+        .row-content{
+            flex-direction: column-reverse;
+        }
+        .image-section{
+            position: inherit;
+            width: 100vw;
         }
     }
 
@@ -124,7 +154,7 @@ z-index: 100;
         <div class="container d-flex justify-content-between align-items-center">
             <div class="d-flex align-items-center">
                 <img src="https://via.placeholder.com/50" alt="Logo" class="me-2" id="logo" style="border-radius: 50%;">
-                <h1 class="h4 mb-0">Research</h1>
+                <h1 class="h4 mb-0">Learning Platform</h1>
             </div>
             <button id="sidebarToggle" class="btn btn-primary d-md-none">☰</button>
             <p class="mb-0 d-none d-md-block">Your Gateway to Knowledge</p>
@@ -135,7 +165,7 @@ z-index: 100;
         <!-- Sidebar -->
         <nav class="flex-shrink-0 p-3 d-md-block nav-bar" style="width: 300px;" id="sidebar">
             <div class="modes">
-                <p>Light</p>
+                <h6>Light</h6>
                 <div>
                     <input type="checkbox" class="checkbox" id="checkbox">
                     <label for="checkbox" class="checkbox-label">
@@ -144,7 +174,7 @@ z-index: 100;
                     <span class="ball"></span>
                     </label>
                 </div>
-                <p>dark</p>
+                <h6>dark</h6>
               </div>
         
               <script>
@@ -171,13 +201,19 @@ z-index: 100;
                     </a>
                     <ul class="collapse list-unstyled ms-3" id="chapter4">
                         <li class="nav-item">
-                            <a class="nav-link" href="#objectsinreserch">3.1: Objects in Research Ethics</a>
+                            <a class="nav-link" href="#reserachethics"> >> Content: </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#objectsinreserch">3.1: Objectives in Research Ethics</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#principle" data-bs-toggle="collapse" aria-expanded="false">
                                 3.2: Principles of Research Ethics <span class="caret"></span>
                             </a>
                             <ul class="collapse list-unstyled ms-3" id="principle">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#principlesofresearch"> >> Content: </a>
+                                </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="#honesty">3.2.1: Honesty</a>
                                 </li>
@@ -188,37 +224,37 @@ z-index: 100;
                                     <a class="nav-link" href="#objectivity">3.2.3: Objectivity</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">3.2.4: Inform consent</a>
+                                    <a class="nav-link" href="#informconsent">3.2.4: Inform consent</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">3.2.5: Respect for person/respondent</a>
+                                    <a class="nav-link" href="#respect">3.2.5: Respect for person/respondent</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">3.2.6: Brnificence</a>
+                                    <a class="nav-link" href="#benificence">3.2.6: Benificence</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">3.2.7: Non-maleficence /Protecting the subjects (Human)</a>
+                                    <a class="nav-link" href="#non-maleficence">3.2.7: Non-maleficence /Protecting the subjects (Human)</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">3.2.8: Responsible publication</a>
+                                    <a class="nav-link" href="#responsiblepublication">3.2.8: Responsible publication</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">3.2.9: Protecting anonymity</a>
+                                    <a class="nav-link" href="#protectinganonymity">3.2.9: Protecting anonymity</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">3.2.10: Confidentiality</a>
+                                    <a class="nav-link" href="#confidentiality">3.2.10: Confidentiality</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">3.2.11: Non-discrimination</a>
+                                    <a class="nav-link" href="#non-discrimination">3.2.11: Non-discrimination</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">3.2.12: Opennes</a>
+                                    <a class="nav-link" href="#opennes">3.2.12: Opennes</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">3.2.13: Carefulness and respect for intellectual property</a>
+                                    <a class="nav-link" href="#carefulness">3.2.13: Carefulness and respect for intellectual property</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">3.2.14: Justice</a>
+                                    <a class="nav-link" href="#justice">3.2.14: Justice</a>
                                 </li>
                             </ul>
                         </li>
@@ -266,29 +302,267 @@ z-index: 100;
                             <section id="whayisresearchdone">
                                 <h1>Whay is Research done?</h1>
                                 <p>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum saepe assumenda fugiat aut nulla libero! Quibusdam quod, ut, dicta accusamus ad odio asperiores voluptate fugit quisquam minima amet unde illum?
+                                    Research is a process of seeking out answers to a specific problem. It can be conducted for several purposes, such as to understand a phenomenon, behavior, or test a theory. Research is conducted systematically, and it adds to a body of knowledge and supports many theories.
                                 </p>
+                                <ol>
+                                    <li><span class="orange">Reseach is done for advancement</span> - which is already known should be evaluated continuously
+                                        <p>By continuously evaluating what is already known, research not only safeguards the credibility of existing knowledge but also ensures its relevance and utility in a constantly evolving world. This cyclical process of discovery and reassessment forms the backbone of scientific progress.</p>
+                                        <ol type="I">
+                                            <li><span class="orange">Research as a Tool for Advancement:</span>
+                                                <ul>
+                                                    <li><span class="orange">Expanding Knowledge:</span> Research seeks to push the boundaries of what we know by uncovering</li>
+                                                    <li><span class="orange">Driving Innovation:</span> Advancements in technology, medicine, social science, and other fields often depend on rigorous research to propose and test new ideas.</li>
+                                                </ul>
+                                            </li>
+
+                                            <li><span class="orange">Continuous Evaluation of Existing Knowledge:</span>
+                                                <ul>
+                                                    <li><span class="orange">Validity Over Time:</span> Knowledge may become outdated or inaccurate due to new discoveries, changes in context, or advancements in methodologies. Regular re-evaluation ensures the reliability of existing concepts.</li>
+                                                    <li><span class="orange">Testing Assumptions:</span> Continuous evaluation challenges old assumptions, which might no longer hold true as the field evolves.</li>
+                                                    <li><span class="orange">Replication Studies:</span> Reproducing past studies helps confirm findings and ensures their applicability to current contexts or diverse populations.</li>
+                                                </ul>
+                                            </li>
+
+                                            <li><span class="orange">Preventing Stagnation:</span>
+                                                <ul>
+                                                    <li>Without ongoing evaluation, science and knowledge risk stagnation. Reevaluating what is known keeps the field dynamic and responsive to new challenges.</li>
+                                                </ul>
+                                            </li>
+
+                                            <li><span class="orange">Applications of Continuous Evaluation:</span>
+                                                <ul>
+                                                    <li><span class="orange">Improved Practices:</span> Revisiting known principles can improve techniques, tools, or policies, leading to better outcomes (e.g., revising medical guidelines based on new data).</li>
+                                                    <li><span class="orange">Identifying Gaps:</span> Analyzing what is known can reveal areas that require further exploration or have been overlooked.</li>
+                                                    <li><span class="orange">Ethical and Social Relevance:</span> Reassessment ensures that previously accepted practices align with current ethical standards and societal needs.</li>
+                                                </ul>
+                                            </li>
+                                            
+                                            <li><span class="orange">Example Scenarios:</span>
+                                                <ul>
+                                                    <li><span class="orange">Medicine:</span>Treatments or drugs that were once considered best practice are regularly evaluated through clinical trials to ensure they remain effective or to develop superior alternatives.</li>
+                                                    <li><span class="orange">Technology:</span> Existing algorithms or systems are reviewed to adapt to newer challenges, such as cybersecurity threats or environmental sustainability.</li>
+                                                    <li><span class="orange">Social Sciences:</span> Sociological theories are re-examined in the light of new societal changes or cultural shifts</li>
+                                                </ul>
+                                            </li>
+                                        </ol>
+                                        <br>
+                                    </li>
+                                    
+                                    <li><span class="orange">Reseach is done for future knowledge in particular area</span>
+                                        <p>By focusing on future knowledge, research not only seeks to solve today’s problems but also anticipates tomorrow’s challenges, ensuring continuous progress and preparedness in a rapidly evolving world.</p>
+                                        <ol type="I">
+                                            <li><span class="orange">Generating New Knowledge:</span>
+                                                <ul>
+                                                    <li><span class="orange">Uncovering the Unknown:</span> Research aims to explore unanswered questions, address gaps in knowledge, and investigate new areas that have not yet been studied.</li>
+                                                    <li><span class="orange">Building on Existing Foundations:</span> While research often starts with what is already known, its primary goal is to go beyond that, developing theories, methods, or solutions that push boundaries.</li>
+                                                </ul>
+                                            </li>
+
+                                            <li><span class="orange">Preparing for the Future:</span>
+                                                <ul>
+                                                    <li><span class="orange">Anticipating Needs:</span> Research often seeks to address future challenges, whether in science, technology, health, or social systems.
+                                                        <ul>
+                                                            <li>Example: Climate change research anticipates future environmental shifts and prepares strategies for mitigation and adaptation.</li>
+                                                        </ul>
+                                                    </li>
+                                                    <li><span class="orange">Innovation and Development:</span> By exploring new possibilities, research lays the groundwork for future technologies, treatments, or societal advancements.</li>
+                                                </ul>
+                                            </li>
+
+                                            <li><span class="orange">Specialization in a Particular Area:</span>
+                                                <ul>
+                                                    <li><span class="orange">Focused Exploration:</span> Research is typically concentrated on specific areas to allow for in-depth analysis and expertise development.
+                                                        <ul>
+                                                            <li>Example: In medicine, research into gene therapy focuses on future treatment options for genetic disorders.</li>
+                                                        </ul>
+                                                    </li>
+                                                    <li><span class="orange">Cross-Disciplinary Impact:</span> Insights gained in one area can often influence other fields, fostering innovation through interdisciplinary collaboration.</li>
+                                                </ul>
+                                            </li>
+
+                                            <li><span class="orange">Long-Term Impact:</span>
+                                                <ul>
+                                                    <li><span class="orange">Knowledge Repository:</span> Research contributes to a growing repository of information that future generations of scientists, educators, and policymakers can draw upon.</li>
+                                                    <li><span class="orange">Informed Decision-Making:</span> Policymakers and leaders use the knowledge generated by research to make informed decisions that shape the future.</li>
+                                                </ul>
+                                            </li>
+
+                                            <li><span class="orange">Examples of Research for Future Knowledge:</span>
+                                                <ul>
+                                                    <li><span class="orange">Astronomy:</span> Exploring distant planets or galaxies to understand the potential for future exploration or the origins of the universe.</li>
+                                                    <li><span class="orange">Artificial Intelligence:</span> Research into machine learning algorithms for future applications in automation, healthcare, or education.</li>
+                                                    <li><span class="orange">Public Health:</span> Studies on emerging diseases to prepare vaccines or strategies for future outbreaks.</li>
+                                                </ul>
+                                            </li>
+
+                                            <li><span class="orange">Ethical and Societal Considerations:</span>
+                                                <ul>
+                                                    <li><span class="orange">Responsibility to Future Generations:</span> Research must consider the long-term implications of its findings, ensuring they are used ethically and sustainably.</li>
+                                                    <li><span class="orange">Balancing Curiosity with Utility:</span> While some research explores purely theoretical questions, much of it is also designed to have practical applications in the future.</li>
+                                                </ul>
+                                            </li>
+                                        </ol>
+                                    </li>
+
+                                    <li><span class="orange">Reseach is done to increase understanding</span>
+                                        <p>
+                                            By increasing understanding, research fulfills a critical role in both intellectual and practical development, empowering individuals and societies to navigate and improve the world around them.
+                                        </p>
+                                        <ol type="I">
+                                            <li><span class="orange">Enhancing Knowledge:</span>
+                                                <ul>
+                                                    <li><span class="orange">Filling Knowledge Gaps:</span> Research identifies and addresses areas where understanding is incomplete or unclear.</li>
+                                                    <li><span class="orange">Clarifying Complex Concepts:</span> By investigating intricate topics, research provides clarity and makes complex ideas more accessible.</li>
+                                                </ul>
+                                            </li>
+
+                                            <li><span class="orange">Building a Foundation for Action:</span>
+                                                <ul>
+                                                    <li><span class="orange">Informed Decision-Making:</span> Greater understanding enables individuals, organizations, and governments to make evidence-based decisions.</li>
+                                                    <ul>
+                                                        <li>Example: Research on economic trends helps policymakers design effective fiscal policies.</li>
+                                                    </ul>
+                                                    <li><span class="orange">Practical Applications:</span> Improved understanding leads to better tools, technologies, and strategies in various domains, from medicine to engineering.</li>
+                                                </ul>
+                                            </li>
+
+                                            <li><span class="orange">Exploring the "Why" and "How":</span>
+                                                <ul>
+                                                    <li><span class="orange">Causal Relationships:</span> Research often seeks to explain why certain events occur and how various factors interact.</li>
+                                                    <ul>
+                                                        <li>Example: Understanding how climate change affects ecosystems informs conservation efforts.</li>
+                                                    </ul>
+                                                    <li><span class="orange">Predictive Insights:</span> By increasing understanding, research helps predict future outcomes and trends.</li>
+                                                </ul>
+                                            </li>
+
+                                            <li><span class="orange">Advancing Theoretical Frameworks:</span>
+                                                <ul>
+                                                    <li><span class="orange">Refining Existing Theories:</span> Research tests and enhances current theories, ensuring they remain relevant and robust.</li>
+                                                    <li><span class="orange">Developing New Models:</span> As understanding grows, new frameworks and models emerge to explain phenomena.</li>
+                                                </ul>
+                                            </li>
+
+                                            <li><span class="orange">Encouraging Curiosity and Exploration:</span>
+                                                <ul>
+                                                    <li><span class="orange">Intrinsic Value of Knowledge:</span> Beyond practical applications, research satisfies the human desire to know and understand the world.</li>
+                                                    <ul>
+                                                        <li>Example: Astronomical research may not have immediate practical benefits but fulfills the quest to understand the universe.</li>
+                                                    </ul>
+                                                    <li><span class="orange">Stimulating Innovation:</span> Increased understanding often sparks new ideas, leading to innovations that were not initially anticipated.</li>
+                                                </ul>
+                                            </li>
+
+                                            <li><span class="orange">Examples Across Fields:</span>
+                                                <ul>
+                                                    <li><span class="orange">Medicine:</span> Research into disease mechanisms increases understanding of how illnesses develop and how to treat them effectively.</li>
+                                                    <li><span class="orange">Social Sciences:</span> Studies on cultural behaviors increase understanding of societal dynamics and human interactions.</li>
+                                                    <li><span class="orange">Technology:</span> Research on materials science deepens understanding of physical properties, enabling advancements in construction, electronics, and manufacturing.</li>
+                                                </ul>
+                                            </li>
+                                            
+                                        </ol>
+                                    </li>
+                                </ol>
                             </section>
 
                             <!--RFesearch ethics-->
                             <section id="reserachethics">
                                 <h1>Research Ethics</h1>
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum saepe assumenda fugiat aut nulla libero! Quibusdam quod, ut, dicta accusamus ad odio asperiores voluptate fugit quisquam minima amet unde illum?
-                                </p>
+                                <div class="row row-content">
+                                    <div class="col-md-9">
+                                        <p>
+                                            First, What is Ethics?.. 
+                                            Ethics are a system of moral principles that guide people's decisions and actions. They help people determine what is right and wrong, and how to treat others with respect and fairness. Ethics are also known as moral philosophy.
+                                        </p>
+                                        <p>
+                                            And Research ethics are a set of principles and guidelines that ensure research is conducted in an ethical and responsible manner. Some key ethical considerations in research include: 
+                                        </p>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <img src="resources/image/research-ethics.png" class="img-fluid mb-3" alt="Ethics">
+                                    </div>
+                                </div>
+                                
                             </section>
 
                             <!--Objects in research-->
                             <section id="objectsinreserch">
-                                <h1>Objects in Research</h1>
+                                <h1>Objectives in Research Ethics</h1>
+                                <h6>To protect Human participants.</h6>
                                 <p>
-                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde eligendi voluptate similique. Libero consectetur repellat cum rem dolorum temporibus blanditiis nisi tempore tenetur, assumenda quisquam at nemo. Totam, vitae eos.
+                                    This focuses on ensuring the safety, dignity, rights, and well-being of individuals who take part in studies. This involves implementing ethical practices and safeguards throughout the research process.</li>
                                 </p>
+                                <h6>To ensure that research is conducted in a way that  serves interests of individuals, group and/or society as a whole.</h6>
+                                <p>
+                                    In research emphasizes the broader purpose of generating benefits that extend beyond the research process. Here’s how it relates to different stakeholders:
+                                </p>
+                                <ol>
+                                    <li><span class="orange">Individuals</span>
+                                        <ul>
+                                            <li><span class="orange">Direct Benefits:</span> Research can provide direct benefits to participants, such as improved treatments in clinical trials, access to new interventions, or personal insights (e.g., genetic research).</li>
+                                            <li><span class="orange">Respect for Dignity:</span>  By focusing on ethical principles, research upholds individuals' dignity, autonomy, and rights.</li>
+                                        </ul>
+                                    </li>
+                                    <li><span class="orange">Groups</span>
+                                        <ul>
+                                            <li><span class="orange">Addressing Group Needs:</span>  Studies often focus on specific populations (e.g., cultural groups, communities, or demographic categories) to identify their unique challenges and propose solutions, such as improved healthcare access or social policies.</li>
+                                            <li><span class="orange">Reducing Inequality:</span> Research can advocate for marginalized or underserved groups by highlighting disparities and proposing evidence-based recommendations.</li>
+                                        </ul>
+                                    </li>
+                                    <li><span class="orange">Society as a Whole</span>
+                                        <ul>
+                                            <li><span class="orange">Knowledge Advancement:</span>  Research contributes to the overall body of knowledge, fostering scientific, technological, and social progress that benefits humanity.</li>
+                                            <li><span class="orange">Policy and Practice:</span> Findings can inform policies, educational programs, or societal norms, helping address global challenges like climate change, public health, or social justice.
+                                            </li>
+                                            <li><span class="orange">Ethical and Sustainable Development:</span> By serving society, research aligns with long-term goals such as sustainable development, equity, and ethical innovation.
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ol>
+
+                                <h6>To examin specific research activities and protects for thair <span class="orange">Ethical soundness</span>, looking at isues such as the <span class="orange">management of risk, protection of confidentiality</span> and the process of <span class="orange">informed consent</span>.</h6>
+                                <ol>
+                                    <li><span class="orange">Examining Specific Research Activities</span>
+                                        <ul>
+                                            <li><span class="orange">Assessment of Ethical Standards:</span>  This involves scrutinizing research designs, methodologies, and protocols to confirm they align with ethical guidelines.</li>
+                                            <li><span class="orange">Case-by-Case Analysis:</span> Each study is unique and must be reviewed individually to identify potential ethical concerns specific to its context, objectives, and participants.
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li><span class="orange">Management of Risk</span>
+                                        <ul>
+                                            <li><span class="orange">Identifying Potential Risks:</span>  Risks may include physical harm, psychological stress, social stigmatization, or economic disadvantages for participants.</li>
+                                            <li><span class="orange">Mitigating Risks:</span> Researchers must develop strategies to minimize risks, such as safe procedures, counseling support, or contingency plans.
+                                            </li>
+                                            <li><span class="orange">Balancing Risk and Benefit:</span> The potential benefits of the research must outweigh the risks to participants or society.
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li><span class="orange">Protection of Confidentiality</span>
+                                        <ul>
+                                            <li><span class="orange">Data Security:</span>  Safeguards must be implemented to protect participants’ private information from breaches, such as encryption or anonymization.</li>
+                                            <li><span class="orange">Limited Access:</span> Only authorized individuals should access sensitive data to prevent misuse.
+                                            </li>
+                                            <li><span class="orange">Respecting Privacy:</span> Participants should feel confident that their personal information will not be shared or published without explicit permission.
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li><span class="orange">Process of Informed Consent</span>
+                                        <ul>
+                                            <li><span class="orange">Transparency:</span> Participants must receive clear and comprehensive information about the study’s purpose, procedures, risks, and benefits.</li>
+                                            <li><span class="orange">Voluntary Participation:</span> Consent must be given freely without coercion, ensuring participants are not pressured or manipulated into agreeing.
+                                            </li>
+                                            <li><span class="orange">Ongoing Consent:</span> Informed consent isn’t a one-time event; participants should be allowed to ask questions or withdraw consent at any point during the study.
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ol>
                             </section>
 
                             <!--Principles of researc-->
                             <section id="principlesofresearch">
-                                <h1>Priciples of Research</h1>
+                                <h1>Priciples of Research Ethics</h1>
                                 <p>
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, recusandae temporibus mollitia optio neque laboriosam? Ex harum qui officia quisquam aliquid libero recusandae voluptatum accusamus similique eos rem, quasi expedita.
                                 </p>
@@ -314,41 +588,129 @@ z-index: 100;
                                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium officiis consequatur harum maiores nesciunt ducimus aut totam sit optio deserunt earum ullam quis necessitatibus, a ipsam provident. Quo, quibusdam deleniti?
                                     </p>
                                 </div>
+
+                                    <!--Inform consent-->
+                                <div id="informconsent">
+                                    <h2>Inform consent</h2>
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae eum placeat temporibus, minus asperiores distinctio blanditiis laudantium sit explicabo quia ex? Soluta deserunt excepturi perspiciatis nemo dolorem aliquam eum totam!
+                                    </p>
+                                </div>
+
+                                <!--Respect for person/respondent-->
+                                <div id="respect">
+                                    <h2>Respect for person/respondent</h2>
+                                    <p>
+                                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore in consequuntur rem, amet labore quibusdam architecto. Necessitatibus quaerat eaque asperiores aliquid incidunt, laborum ipsa, facere, reiciendis dolorem voluptatum consectetur dolores?
+                                    </p>
+                                </div>
+
+                                <!--Brnificence-->
+                                <div id="benificence">
+                                    <h2>Benificence</h2>
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque quod eos vel eius nobis quaerat iste, iusto pariatur magnam laboriosam exercitationem debitis ratione? Ipsam et dolorum hic itaque eum consectetur.
+                                    </p>
+                                </div>
+
+                                <!--Non-maleficence /Protecting the subjects (Human)-->
+                                <div id="non-maleficence">
+                                    <h2>Non-maleficence /Protecting the subjects (Human)</h2>
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus ut perferendis doloribus dolores ducimus accusantium consequuntur nisi! Quos delectus iusto consequuntur, sit facere repellendus animi nobis eveniet, aut consectetur nisi!
+                                    </p>
+                                </div>
+
+                                <!--Responsible publication-->
+                                <div id="responsiblepublication">
+                                    <h2>Responsible publication</h2>
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate earum porro perspiciatis sequi aliquid qui ipsum at iusto. Quasi aspernatur maiores corrupti? Minima eius consequuntur culpa sapiente tempora, voluptatibus placeat?
+                                    </p>
+                                </div>
+
+                                <!--Protecting anonymity-->
+                                <div id="protectinganonymity">
+                                    <h2>Protecting anonymity</h2>
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique at autem illum deserunt delectus saepe suscipit distinctio accusamus deleniti sequi quos voluptatem nihil, quae, magni dignissimos reprehenderit hic tenetur ab?
+                                    </p>
+                                </div>
+
+                                <!--Confidentiality-->
+                                <div id="confidentiality">
+                                    <h2>Confidentiality</h2>
+                                    <p>
+                                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum, perspiciatis consequuntur! Necessitatibus deleniti ex amet tempore rerum, eligendi, veniam ipsam odio placeat harum, voluptatum quaerat quam eius fugiat aliquam? Quaerat?
+                                    </p>
+                                </div>
+
+                                <!--Non-discrimination-->
+                                <div id="non-discrimination">
+                                    <h2>Non-discrimination</h2>
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio quo corrupti veniam nemo voluptatem soluta assumenda fuga voluptates autem ullam magnam porro, laborum in similique id minus rem voluptatibus. Ipsum!
+                                    </p>
+                                </div>
+
+                                <!--Opennes-->
+                                <div id="opennes">
+                                    <h2>Opennes</h2>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore in quae aperiam sapiente non obcaecati! Magnam exercitationem ipsa unde hic, vel aspernatur distinctio voluptas. Voluptatem amet mollitia minima sunt repudiandae.
+                                    </p>
+                                </div>
+
+                                <!--Carefulness and respect for intellectual property-->
+                                <div id="carefulness">
+                                    <h2>Carefulness and respect for intellectual property</h2>
+                                    <p>
+                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia velit quis illum corporis, repudiandae quia totam voluptas, libero ab ea impedit alias dicta eum dolores. Deleniti reprehenderit quam laboriosam. Voluptatibus!
+                                    </p>
+                                </div>
+
+                                <!--Justice-->
+                                <div id="justice">
+                                    <h2>Justice</h2>
+                                    <p>
+                                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum magni cum, deserunt debitis minima officia est. Totam voluptates in ullam aliquam eius facilis ipsum accusamus vitae quos nam? Quis, aliquid.
+                                    </p>
+                                </div>
                             </section>
                             
                         </div>
-                        <!-- Image Section -->
-                        <div class="col-md-4">
-                            <div class="rounded">
-                                <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel">
-                                    <!-- Carousel items -->
-                                    <div class="carousel-inner">
-                                        <div class="carousel-item active">
-                                            <img src="resources/image/sample1.jpg" class="d-block w-100 img-fluid" alt="Sample Image 1">
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos quis velit dolores quasi aperiam delectus quas suscipit magni alias a, itaque nesciunt obcaecati doloribus, quos cum veniam officiis possimus voluptates.</p>
-                                        </div>
-                                        <div class="carousel-item">
-                                            <img src="resources/image/sample2.png" class="d-block w-100 img-fluid" alt="Sample Image 2">
-                                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa unde nam placeat tenetur esse! Sit nobis voluptates incidunt quam veniam accusantium blanditiis officia, itaque rerum, quaerat sequi alias in soluta?</p>
-                                        </div>
-                                        <div class="carousel-item">
-                                            <img src="resources/image/sample3.jpg" class="d-block w-100 img-fluid" alt="Sample Image 3">
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis maxime minus numquam magnam ipsum nesciunt voluptatem blanditiis repellat ducimus at impedit odit voluptatibus perspiciatis error accusamus, veritatis molestiae ullam. Corrupti!</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <hr>
-                        </div>
+                        
                     </div>
                 </main>
+                <!-- Image Section -->
+                <div class="col-md-4 image-section">
+                    <div class="rounded">
+                        <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel">
+                            <!-- Carousel items -->
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="resources/image/sample1.jpg" class="d-block w-100 img-fluid" alt="Sample Image 1">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos quis velit dolores quasi aperiam delectus quas suscipit magni alias a, itaque nesciunt obcaecati doloribus, quos cum veniam officiis possimus voluptates.</p>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="resources/image/sample2.png" class="d-block w-100 img-fluid" alt="Sample Image 2">
+                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa unde nam placeat tenetur esse! Sit nobis voluptates incidunt quam veniam accusantium blanditiis officia, itaque rerum, quaerat sequi alias in soluta?</p>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="resources/image/sample3.jpg" class="d-block w-100 img-fluid" alt="Sample Image 3">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis maxime minus numquam magnam ipsum nesciunt voluptatem blanditiis repellat ducimus at impedit odit voluptatibus perspiciatis error accusamus, veritatis molestiae ullam. Corrupti!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
     <!-- Footer -->
     <footer class=" text-center py-3 mt-4">
-        <p class="mb-0">&copy; 2024 QUALITATIVE METHOD Learning Platform | Designed by mr.K</p>
+        <h5 class="mb-0">&copy; 2024 QUALITATIVE METHOD Learning Platform | Designed by mr.K</h5>
     </footer>
 
     <!-- Bootstrap JS -->
