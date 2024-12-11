@@ -8,6 +8,10 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <style>
+
+    body{
+        text-align: justify;
+    }
     .orange{
         color: rgb(243, 146, 1);
     }
@@ -29,6 +33,12 @@
         width: 30vw;
     }
 
+    .content-image{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+    }
     p{
         text-align: justify;
         text-indent: 50px;
@@ -50,6 +60,7 @@
         top: 0;
         left: 0;
         bottom: 0;
+        z-index: 10;
     }
     .nav-bar::-webkit-scrollbar {
         display: none;
@@ -233,19 +244,19 @@
                                     <a class="nav-link" href="#benificence">3.2.6: Benificence</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#non-maleficence">3.2.7: Non-maleficence /Protecting the subjects (Human)</a>
+                                    <a class="nav-link" href="#nonmali">3.2.7: Non-maleficence /Protecting the subjects (Human)</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#responsiblepublication">3.2.8: Responsible publication</a>
+                                    <a class="nav-link" href="#responsible">3.2.8: Responsible publication</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#protectinganonymity">3.2.9: Protecting anonymity</a>
+                                    <a class="nav-link" href="#protectano">3.2.9: Protecting anonymity</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="#confidentiality">3.2.10: Confidentiality</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#non-discrimination">3.2.11: Non-discrimination</a>
+                                    <a class="nav-link" href="#nondis">3.2.11: Non-discrimination</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="#opennes">3.2.12: Opennes</a>
@@ -257,6 +268,31 @@
                                     <a class="nav-link" href="#justice">3.2.14: Justice</a>
                                 </li>
                             </ul>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#fiveGen" data-bs-toggle="collapse" aria-expanded="false">
+                                    3.3: Five general categories of unethical behavior in research can be listed. <span class="caret"></span>
+                                </a>
+                                <ul class="collapse list-unstyled ms-3" id="fiveGen">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#fivegen"> >> Content: </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#Falsification">3.3.1: Falsification of Data</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#failure">3.3.2: Failure to Credit Others</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#plagiarism">3.3.3: Plagiarism</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#conflict">3.3.4: Conflicts of Interest</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#bias">3.3.5: Biased Design and Interpretation Due to Outside Influence</a>
+                                    </li>
+                                </ul>
+                            </li>
                         </li>
                     </ul>
                 </li>
@@ -305,7 +341,7 @@
                                     Research is a process of seeking out answers to a specific problem. It can be conducted for several purposes, such as to understand a phenomenon, behavior, or test a theory. Research is conducted systematically, and it adds to a body of knowledge and supports many theories.
                                 </p>
                                 <ol>
-                                    <li><span class="orange">Reseach is done for advancement</span> - which is already known should be evaluated continuously
+                                    <li id="advancement"><span class="orange">Reseach is done for advancement</span> - which is already known should be evaluated continuously
                                         <p>By continuously evaluating what is already known, research not only safeguards the credibility of existing knowledge but also ensures its relevance and utility in a constantly evolving world. This cyclical process of discovery and reassessment forms the backbone of scientific progress.</p>
                                         <ol type="I">
                                             <li><span class="orange">Research as a Tool for Advancement:</span>
@@ -348,7 +384,7 @@
                                         <br>
                                     </li>
                                     
-                                    <li><span class="orange">Reseach is done for future knowledge in particular area</span>
+                                    <li id="particulararea"><span class="orange">Reseach is done for future knowledge in particular area</span>
                                         <p>By focusing on future knowledge, research not only seeks to solve today’s problems but also anticipates tomorrow’s challenges, ensuring continuous progress and preparedness in a rapidly evolving world.</p>
                                         <ol type="I">
                                             <li><span class="orange">Generating New Knowledge:</span>
@@ -404,7 +440,7 @@
                                         </ol>
                                     </li>
 
-                                    <li><span class="orange">Reseach is done to increase understanding</span>
+                                    <li id="understanding"><span class="orange">Reseach is done to increase understanding</span>
                                         <p>
                                             By increasing understanding, research fulfills a critical role in both intellectual and practical development, empowering individuals and societies to navigate and improve the world around them.
                                         </p>
@@ -562,120 +598,254 @@
 
                             <!--Principles of researc-->
                             <section id="principlesofresearch">
-                                <h1>Priciples of Research Ethics</h1>
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, recusandae temporibus mollitia optio neque laboriosam? Ex harum qui officia quisquam aliquid libero recusandae voluptatum accusamus similique eos rem, quasi expedita.
-                                </p>
-                                <!--Honesty-->
-                                <div id="honesty">
-                                    <h2>Honesty</h2>
-                                    <p>
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni cumque illum tenetur delectus necessitatibus aperiam incidunt exercitationem quos, enim blanditiis pariatur velit. Sequi eaque blanditiis atque, sapiente adipisci tempore hic.
-                                    </p>
-                                </div>
-                                <!--Integrity-->
-                                <div id="integrity">
-                                    <h2>Integrity</h2>
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut dolor possimus ab quas repellendus. Consectetur autem labore voluptatibus doloribus quo perferendis et sunt? Voluptatibus nesciunt porro praesentium veritatis velit excepturi!
-                                    </p>
-                                </div>
+                                <h3>Priciples of Research Ethics</h3>
+                                <ol type="I">
+                                    <!--Honesty-->
+                                    <li id="honesty"><span class="orange">Honesty</span>
+                                        <p>
+                                            add
+                                            <ul>
+                                                <li>
+                                                    example
+                                                </li>
+                                            </ul>
+                                        </p>
+                                    </li>
+                                    
+                                    <!--Integrity-->
+                                    <li id="integrity"><span class="orange">Integrity</span>
+                                        <p>
+                                            add
+                                            <ul>
+                                                <li>
+                                                    example
+                                                </li>
+                                            </ul>
+                                        </p>
+                                    </li>
 
-                                <!--Objectivity-->
-                                <div id="objectivity">
-                                    <h2>Objectivity</h2>
-                                    <p>
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium officiis consequatur harum maiores nesciunt ducimus aut totam sit optio deserunt earum ullam quis necessitatibus, a ipsam provident. Quo, quibusdam deleniti?
-                                    </p>
-                                </div>
+                                    <!--Objectivity-->
+                                    <li id="objectivity"><span class="orange">Objectivity</span>
+                                        <p>
+                                            add
+                                            <ul>
+                                                <li>
+                                                    example
+                                                </li>
+                                            </ul>
+                                        </p>
+                                    </li>
 
                                     <!--Inform consent-->
-                                <div id="informconsent">
-                                    <h2>Inform consent</h2>
-                                    <p>
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae eum placeat temporibus, minus asperiores distinctio blanditiis laudantium sit explicabo quia ex? Soluta deserunt excepturi perspiciatis nemo dolorem aliquam eum totam!
-                                    </p>
-                                </div>
+                                    <li id="informconsent"><span class="orange">Inform consent</span>
+                                        <p>
+                                            add
+                                            <ul>
+                                                <li>
+                                                    example
+                                                </li>
+                                            </ul>
+                                        </p>
+                                    </li>
 
-                                <!--Respect for person/respondent-->
-                                <div id="respect">
-                                    <h2>Respect for person/respondent</h2>
-                                    <p>
-                                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore in consequuntur rem, amet labore quibusdam architecto. Necessitatibus quaerat eaque asperiores aliquid incidunt, laborum ipsa, facere, reiciendis dolorem voluptatum consectetur dolores?
-                                    </p>
-                                </div>
+                                    <!--Respect for person/respondent-->
+                                    <li id="respect"><span class="orange">Respect for person/respondent</span>
+                                        <p>
+                                            
+                                        </p>
+                                    </li>
 
-                                <!--Brnificence-->
-                                <div id="benificence">
-                                    <h2>Benificence</h2>
-                                    <p>
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque quod eos vel eius nobis quaerat iste, iusto pariatur magnam laboriosam exercitationem debitis ratione? Ipsam et dolorum hic itaque eum consectetur.
-                                    </p>
-                                </div>
+                                    <!--Brnificence-->
+                                    <li id="benificence"><span class="orange">Benificence</span>
+                                        <p>
+                                            The principle of beneficence means that researchers should aim to do good and promote the well-being of research participants. This involves maximizing potential benefits while minimizing potential harms.
+                                            <ul>
+                                                <li>
+                                                    Example: A researcher studying a new treatment for a disease must ensure that the treatment is safe and effective for participants. They must also weigh the potential benefits of the treatment against the risks involved, ensuring that the benefits outweigh the risks.
+                                                </li>
+                                            </ul>
+                                        </p>
+                                    </li>
 
-                                <!--Non-maleficence /Protecting the subjects (Human)-->
-                                <div id="non-maleficence">
-                                    <h2>Non-maleficence /Protecting the subjects (Human)</h2>
-                                    <p>
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus ut perferendis doloribus dolores ducimus accusantium consequuntur nisi! Quos delectus iusto consequuntur, sit facere repellendus animi nobis eveniet, aut consectetur nisi!
-                                    </p>
-                                </div>
+                                    <!--Non-maleficence /Protecting the subjects (Human)-->
+                                    <li id="nonmali"><span class="orange">Non-maleficence /Protecting the subjects (Human)</span>
+                                        <p>
+                                            The principle of beneficence means that researchers should aim to do good and promote the well-being of research participants. This involves maximizing potential benefits while minimizing potential harms.
+                                            <ul>
+                                                <li>
+                                                    Example: A researcher studying a new treatment for a disease must ensure that the treatment is safe and effective for participants. They must also weigh the potential benefits of the treatment against the risks involved, ensuring that the benefits outweigh the risks.
+                                                </li>
+                                            </ul>
+                                        </p>
+                                    </li>
 
-                                <!--Responsible publication-->
-                                <div id="responsiblepublication">
-                                    <h2>Responsible publication</h2>
-                                    <p>
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate earum porro perspiciatis sequi aliquid qui ipsum at iusto. Quasi aspernatur maiores corrupti? Minima eius consequuntur culpa sapiente tempora, voluptatibus placeat?
-                                    </p>
-                                </div>
+                                    <!--Responsible publication-->
+                                    <li id="responsible"><span class="orange">Responsible publication</span>
+                                        <p>
+                                            Responsible publication means that researchers must present their research findings accurately and honestly. This includes avoiding plagiarism, fabricating data, and selectively reporting results.
+                                            <ul>
+                                                <li>
+                                                    Example: A researcher studying the effectiveness of a new drug should report all of their findings, including any negative results. They should also ensure that their research methods are clearly described so that other researchers can replicate their study.
+                                                </li>
+                                            </ul>
+                                        </p>
+                                    </li>
 
-                                <!--Protecting anonymity-->
-                                <div id="protectinganonymity">
-                                    <h2>Protecting anonymity</h2>
-                                    <p>
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique at autem illum deserunt delectus saepe suscipit distinctio accusamus deleniti sequi quos voluptatem nihil, quae, magni dignissimos reprehenderit hic tenetur ab?
-                                    </p>
-                                </div>
+                                    <!--Protecting anonymity-->
+                                    <li id="protectano"><span class="orange">Protecting anonymity</span>
+                                        <p>
+                                            Protecting anonymity means that researchers should not collect or use any information that could identify research participants. This helps to protect participants' privacy and prevent potential harm or discrimination.
+                                            <ul>
+                                                <li>
+                                                    Example: A researcher conducting a survey about sensitive topics like sexual behavior or drug use should not ask for participants' names or other identifying information. They should also ensure that any data they collect is anonymized before it is analyzed or shared.
+                                                </li>
+                                            </ul>
+                                        </p>
+                                    </li>
 
-                                <!--Confidentiality-->
-                                <div id="confidentiality">
-                                    <h2>Confidentiality</h2>
-                                    <p>
-                                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum, perspiciatis consequuntur! Necessitatibus deleniti ex amet tempore rerum, eligendi, veniam ipsam odio placeat harum, voluptatum quaerat quam eius fugiat aliquam? Quaerat?
-                                    </p>
-                                </div>
+                                    <!--Confidentiality-->
+                                    <li id="confidentiality"><span class="orange">Confidentiality</span>
+                                        <p>
+                                            Confidentiality means that researchers should keep all information about research participants private. This includes protecting participants' responses, personal details, and any other sensitive information that is collected during the study.
+                                            <ul>
+                                                <li>
+                                                    Example: A researcher conducting interviews with people about their experiences with mental illness should keep all of the information they collect confidential. They should not share this information with anyone else without the participant's consent.
+                                                </li>
+                                            </ul>
+                                        </p>
+                                    </li>
 
-                                <!--Non-discrimination-->
-                                <div id="non-discrimination">
-                                    <h2>Non-discrimination</h2>
-                                    <p>
-                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio quo corrupti veniam nemo voluptatem soluta assumenda fuga voluptates autem ullam magnam porro, laborum in similique id minus rem voluptatibus. Ipsum!
-                                    </p>
-                                </div>
+                                    <!--Non-discrimination-->
+                                    <li id="nondis"><span class="orange">Non-discrimination</span>
+                                        <p>
+                                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio quo corrupti veniam nemo voluptatem soluta assumenda fuga voluptates autem ullam magnam porro, laborum in similique id minus rem voluptatibus. Ipsum!
+                                        </p>
+                                    </li>
 
-                                <!--Opennes-->
-                                <div id="opennes">
-                                    <h2>Opennes</h2>
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore in quae aperiam sapiente non obcaecati! Magnam exercitationem ipsa unde hic, vel aspernatur distinctio voluptas. Voluptatem amet mollitia minima sunt repudiandae.
-                                    </p>
-                                </div>
+                                    <!--Opennes-->
+                                    <li id="opennes"><span class="orange">Opennes</span>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore in quae aperiam sapiente non obcaecati! Magnam exercitationem ipsa unde hic, vel aspernatur distinctio voluptas. Voluptatem amet mollitia minima sunt repudiandae.
+                                        </p>
+                                    </li>
 
-                                <!--Carefulness and respect for intellectual property-->
-                                <div id="carefulness">
-                                    <h2>Carefulness and respect for intellectual property</h2>
-                                    <p>
-                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia velit quis illum corporis, repudiandae quia totam voluptas, libero ab ea impedit alias dicta eum dolores. Deleniti reprehenderit quam laboriosam. Voluptatibus!
-                                    </p>
-                                </div>
+                                    <!--Carefulness and respect for intellectual property-->
+                                    <li id="carefulness"><span class="orange">Carefulness and respect for intellectual property</span>
+                                        <p>
+                                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia velit quis illum corporis, repudiandae quia totam voluptas, libero ab ea impedit alias dicta eum dolores. Deleniti reprehenderit quam laboriosam. Voluptatibus!
+                                        </p>
+                                    </li>
 
-                                <!--Justice-->
-                                <div id="justice">
-                                    <h2>Justice</h2>
-                                    <p>
-                                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum magni cum, deserunt debitis minima officia est. Totam voluptates in ullam aliquam eius facilis ipsum accusamus vitae quos nam? Quis, aliquid.
-                                    </p>
-                                </div>
+                                    <!--Justice-->
+                                    <li id="justice"><span class="orange">Justice</span>
+                                        <p>
+                                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum magni cum, deserunt debitis minima officia est. Totam voluptates in ullam aliquam eius facilis ipsum accusamus vitae quos nam? Quis, aliquid.
+                                        </p>
+                                    </li>
+
+                                </ol>
+                            </section>
+
+                            <!--Five general categories of unethical behavior in research can be listed.-->
+                            <section id="fivegen">
+                                <h3>Five general categories of unethical behavior in research can be listed.</h3>
+                                <p>
+                                    Unethical behavior in research undermines the integrity and credibility of the scientific process. It not only tarnishes the reputation of individuals and institutions but also erodes public trust in scientific findings. To address this critical issue, it is essential to categorize and understand the various forms such behavior can take. This discussion will outline five general categories of unethical behavior in research, providing a framework for recognizing and addressing these violations to uphold ethical standards in the scientific community.
+                                </p>
+                                <ol type="I">
+                                    <!--Falsification of Data-->
+                                    <li id="Falsification"><span class="orange">Falsification of Data</span>
+                                        <div class="content-image">
+                                            <img src="resources/image/Falsification.png" class="img-fluid" alt="Falsification of Data">
+                                        </div>
+                                        <p>
+                                            Falsification of data occurs when researchers manipulate or alter research findings to present a desired outcome. This can involve changing existing data, omitting data that doesn't fit the desired narrative, or fabricating data altogether.
+                                            <ul>
+                                                <li>
+                                                    Example: Can you imagine this, you're baking a cake, but you want it to look perfect, so you add extra frosting to cover up some cracks. That's like falsifying data - you're changing the results to make them look better, even if it's not true.
+                                                </li>
+                                                <li>
+                                                    Consequences: Falsification of data is a serious breach of research ethics. It can lead to the publication of false findings, mislead other researchers, and potentially harm individuals or society.
+                                                </li>
+                                            </ul>
+                                        </p>
+                                    </li>
+
+                                    <!--Failure to Credit Others: Stealing Ideas and Insights-->
+                                    <li id="failure"><span class="orange">Failure to Credit Others: Stealing Ideas and Insights</span>
+                                        <div class="content-image">
+                                            <img src="resources/image/FailuretoCreditOthers.png" class="img-fluid" alt="Falsification of Data">
+                                        </div>
+                                        <p>
+                                            Failure to credit others involves using someone else's ideas, research, or words without proper attribution. This includes failing to cite sources correctly, presenting someone else's work as one's own, or neglecting to acknowledge collaborators who contributed significantly to the research.
+                                            <ul>
+                                                <li>
+                                                    Example: You're writing a story, and you borrow a cool idea from a friend, but you forget to mention their name. That's like not giving credit to others in research.
+                                                </li>
+                                                <li>
+                                                    Consequences: Failure to credit others is considered plagiarism, which is a serious academic offense. It undermines the originality and integrity of research, and it can damage the reputation of both the researcher and the institution.
+                                                </li>
+                                            </ul>
+                                        </p>
+                                    </li>
+                                    
+                                    <!--Plagiarism-->
+                                    <li id="plagiarism"><span class="orange">Plagiarism: Taking Credit for Someone Else's Work</span>
+                                        <div class="content-image">
+                                            <img src="resources/image/Plagiarism.png" class="img-fluid" alt="Falsification of Data">
+                                        </div>
+                                        <p>
+                                            Plagiarism is a specific form of failure to credit others. It involves presenting someone else's work, ideas, or words as one's own, without proper attribution. Plagiarism can take various forms, including:
+                                            <p>- Direct Copying: Copying text word-for-word from a source without using quotation marks or providing a citation.</p>
+                                            <p>- Paraphrasing Without Attribution: Rewording someone else's ideas without giving credit to the original source.</p>
+                                            <p>- Submitting Someone Else's Work: Submitting a paper or project that was written by someone else, claiming it as one's own.</p>
+                                            <ul>
+                                                <li>
+                                                    Example: This is like copying your friend's homework and turning it in as your own. It's taking someone else's work and pretending it's yours.
+                                                </li>
+                                                <li>
+                                                    Consequences: Plagiarism is a serious academic offense. It can result in failing grades, expulsion from school, or even legal action.
+                                                </li>
+                                            </ul>
+                                        </p>
+                                    </li>
+
+                                    <!--Conflicts of Interest: Prioritizing Personal Gain Over Research Integrity-->
+                                    <li id="conflict"><span class="orange">Conflicts of Interest: Prioritizing Personal Gain Over Research Integrity</span>
+                                        <div class="content-image">
+                                            <img src="resources/image/Conflicts.png" class="img-fluid" alt="Falsification of Data">
+                                        </div>
+                                        <p>
+                                            Conflicts of interest arise when a researcher's personal interests, financial gains, or relationships could potentially bias their research findings or influence their decisions.
+                                            <ul>
+                                                <li>
+                                                    Example: Imagine you're a judge in a baking contest, but you're secretly friends with one of the bakers. You might be tempted to give them extra points, even if their cake isn't the best. That's like a conflict of interest in research.
+                                                </li>
+                                                <li>
+                                                    Consequences: Plagiarism is a serious academic offense. It can result in failing grades, expulsion from school, or even legal action.
+                                                </li>
+                                            </ul>
+                                        </p>
+                                    </li>
+
+                                    <!--Biased Design and Interpretation Due to Outside Influence-->
+                                    <li id="bias"><span class="orange">Biased Design and Interpretation Due to Outside Influence</span>
+                                        <div class="content-image">
+                                            <img src="resources/image/bias.png" class="img-fluid" alt="Falsification of Data">
+                                        </div>
+                                        <p>
+                                            Biased design and interpretation due to outside influence occurs when external factors, such as funding sources, political pressures, or personal biases, influence the design, execution, or interpretation of research.
+                                            <ul>
+                                                <li>
+                                                    Example: Imagine you're baking a cake, but someone keeps telling you to add more sugar, even though you know it's too much. That's like letting outside influences change your research.
+                                                </li>
+                                            </ul>
+                                        </p>
+                                    </li>
+                                </ol>
+                                <p>
+                                    Based on our opinion research is about finding the truth. These unethical behaviors make the truth harder to find. That's why it's important to always be honest and fair in research. 
+                                </p>
                             </section>
                             
                         </div>
