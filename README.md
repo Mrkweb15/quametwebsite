@@ -1,6 +1,10 @@
 # quametwebsite
 quamet course project
 
+
+🔗 [Live Demo](https://mrkweb15.github.io/quametwebsite/)
+
+
 # Research Learning Website
 
 This is a free and open-source website designed to help users learn more about research methodologies and processes. It provides a collection of resources, guides, and interactive content to aid in the understanding of research concepts.
@@ -43,7 +47,3 @@ This project is maintained by the team members of the **QUAMET** course project.
 ## License
 
 This project is open-source and free to use. No specific license has been defined yet.
-
-
-🔗 [Live Demo]https://mrkweb15.github.io/quametwebsite/)
-
